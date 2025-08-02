@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GAME</title>
+    <link rel="stylesheet" href="./../style/game.css">
+    <script src="./../logic/game.js" defer></script>
+</head>
+
+<body>
+    <!-- AUDIO FILES -->
+    <audio id="bg-audio" src="./../audio/bg.mp3" loop></audio>
+    <audio id="tap-audio" src="./../audio/tap.mp3"></audio>
+    <audio id="game-over-audio" src="./../audio/game-over.mp3"></audio>
+
+    <!-- SCORE DISPLAY -->
+    <p>
+        <span>Current score: </span><span id="score">0</span>
+        <span class="text">high score</span>
+    </p>
+    <hr>
+
+    <!-- START BUTTON -->
+    <div style="text-align: center; margin: 20px;">
+        <button id="startBtn" onclick="startGame()" style="font-size: 20px; padding: 10px 30px;">Let's Start</button>
+    </div>
+
+    <!-- GAME AREA -->
+    <div class="playarea" id="playarea">
+        <script>
+            for (let i = 0; i < 32; i++) {
+                document.write(`<div id="${i}" class="box" onclick="handleClick('${i}')"></div>`);
+            }
+        </script>
+          
+    </div>
+</body>
+</html>
